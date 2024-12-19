@@ -52,7 +52,7 @@ resource "aws_route_table" "ibm-web-rt" {
 }
 
 # public route table association
-resource "aws_route_table_association" "ibm-web-rt association" {
+resource "aws_route_table_association" "ibm-web-rt-association" {
   subnet_id      = aws_subnet.ibm-web-sn.id
   route_table_id = aws_route_table.ibm-web-rt.id
 }
