@@ -8,8 +8,8 @@ resource "aws_vpc" "ibm-vpc" {
 }
 
 # subnet
-resource "aws_subnet" "ibm-web-subnet" {
-  vpc_id     = aws_vpc.main.id
+resource "aws_subnet" "ibm-web-sn" {
+  vpc_id     = aws_vpc.ibm-vpc.id
   cidr_block = "10.0.1.0/24"
   availability_zone = "us-east-1"
   map_public_ip_on_launch = "true"
