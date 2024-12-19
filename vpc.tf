@@ -45,10 +45,6 @@ resource "aws_route_table" "ibm-web-rt" {
     gateway_id = aws_internet_gateway.ibm-igw.id
   }
 
-  route {
-    ipv6_cidr_block        = "::/0"
-    egress_only_gateway_id = aws_egress_only_internet_gateway.example.id
-  }
 
   tags = {
     Name = "ibm-web-route-table"
