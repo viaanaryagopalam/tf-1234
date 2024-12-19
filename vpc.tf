@@ -135,3 +135,14 @@ resource "aws_network_acl_association" "ibm-data-rt-association" {
   network_acl_id = aws_network_acl.ibm-web-nacl.id
   subnet_id      = aws_subnet.ibm-web-sn.id
 }
+
+# public security group
+resource "aws_security_group" "ibm-web-sg" {
+  name        = "ibm-web-server-sg"
+  description = "Allow TLS inbound traffic and all outbound traffic"
+  vpc_id      = aws_vpc.ibm-vpc.id
+
+  tags = {
+    Name = "ibm-web-security-group"
+  }
+}
