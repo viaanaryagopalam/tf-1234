@@ -156,7 +156,7 @@ resource "aws_vpc_security_group_ingress_rule" "ibm-web-ssh" {
 }
  # http traffic
 resource "aws_vpc_security_group_ingress_rule" "ibm-http" {
-  security_group_id = aws_security_group.ibm-http-id
+  security_group_id = aws_security_group.ibm-web-sg.id
   cidr_ipv4         = "0.0.0.0/0"
   from_port         = 80
   ip_protocol       = "tcp"
